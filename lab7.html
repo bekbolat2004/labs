@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login form</title>
+    <style>
+        body{
+        background:url("pexels-paul-basel-1816798.jpg") 0 0/cover no-repeat;
+        background-color: black;
+        font-family:'Poppins' , sans-serif;
+        } 
+        h1{
+            color:black;
+            text-align: center;
+        }
+        
+        #form { 
+        width: 350px;
+        margin: 5vh auto 0 auto;
+        padding: 20px;
+        background-color:grey;
+        border-radius: 4px;
+        font-size: 12px;
+    }     
+    
+    #form button{
+        padding:10px;
+        margin-top: 10px;
+        width:100%;
+        color: white;
+        background-color:blue;
+        border:none;
+        border-radius: 4px;
+    }
+    .input-control{
+        display: flex;
+        flex-direction: column;
+        margin-right:10px;
+    }
+    
+    .input-control input{
+    border:2px solid white;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    padding:10px;
+    width: 100%;
+    }
+    .input-control input:focus{
+        outline: 0;
+    }
+    .input-control.success input{
+    border-color:green;
+    }
+    .input-control.error input{
+    border-color:red;
+    }
+    .radio{
+        display: inline-block;
+    }
+    label{
+        font-weight: bold;
+    }
+    </style>
+
+</head>
+<body>
+<div class="conatainer">
+    <form onsubmit="onSubmit(event)" id="form" action="reg.php">
+    
+        <h1><strong>Registration</strong></h1>
+    
+        <div class="input-control">
+        <label for="username">Username</label> 
+        <input id="username" name="text" type="text" required>   
+    </div>
+    
+    <div class="input-control">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+    </div>
+    
+    <div class="input-control">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required>
+    </div>
+    
+    <div class="input-control">
+        <label for="birth-date">Birth date</label>
+        <input id="birth-date" name="date" type="date" required>
+    </div>
+    
+    <div class="input-control">
+        <label for="birth-hour">Birth hour</label>
+        <input id="birth-hour" name="time" type="time">
+    </div>
+    
+    <div class="radio">
+    <div class="input-control">
+            <label for="gender">Gender</label>
+            <input id="female" name="radio" type="radio" required>female
+            <input id="male" name="radio" type="radio">male
+        </div>
+    </div>
+    <br><br>
+    
+    <div class="input-control">
+        <label for="colors">My favorite color</label>
+        <input id="colors" name="color" type="color">
+    </div>
+    
+    <div class="input-control">
+        <label for="country-of-birth">Country of birth</label>
+        <select name="country-of-birth" id="country-of-birth">Country of birth
+            <option value="kaz">not chosen</option>
+            <option value="kaz">Kazakhstan</option>
+            <option value="usa">United States of America</option>
+            <option value="rus">Russian Federation</option>
+            <option value="ukr">Ukraina</option>
+        </select>
+    </div>
+
+    <div class="input-control">
+        <label for="favorite-car">Favorite Car</label>
+        <input id="favorite-car" name="textarea" type="textarea" disabled>
+    </div> 
+
+    <div class="input-control">
+        <label for="image">Image file</label>
+        <input id="image-file" name="file" type="file"> 
+    </div>
+    
+    <button type="button" onclick="checkOut()">Save</button>
+    <button type="submit" submit= "onSubmit()">Submit</button>
+    
+
+    </form>
+</div>
+
+
+<script>
+function checkOut(){
+    console.log(localStorage.getItem('username'));
+    console.log(localStorage.getItem('password'));
+    console.log(localStorage.getItem('email'));
+    console.log(localStorage.getItem('birth-date'));
+}
+function onSubmit(event){
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    let email = document.getElementById('email').value;
+    let birthDate = document.getElementById('birth-date').value;
+
+    console.log(username);
+    console.log(password);
+    console.log(email);
+    console.log(birthDate);
+
+    let data = event.target;
+    let formData = new FormData(data);
+    let form_data_obj = Object.fromEntries(formData);
+
+    console.log(form_data_obj);
+
+    localStorage.setItem('name', form_data_obj.username);
+    localStorage.setItem('password', form_data_obj.password);
+    localStorage.setItem('email', form_data_obj.email);
+    localStorage.setItem('birth-date', form_data_obj.birthDate);
+    
+    if(password == localStorage.password) 
+    window.location = ""
+    
+    event.preventDefault();
+}
+</script>
+
+
+</body>
+</html>

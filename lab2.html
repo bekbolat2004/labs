@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>labaratory-2</title>
+</head>
+
+<style>
+.red{
+    color: red;
+}
+.red-too{
+    color:red;
+}
+.red-rgba{
+    color:rgba(255, 0, 0,.5); 
+}
+.hex-red{
+    color:#ff0000;
+}
+.background-color{
+    background-color: red;
+    color: white;
+}
+.background-yellow{
+    background-color:yellow;
+    color:black;
+    padding: 15px;
+    border-style: solid;
+    border-color: black;
+}
+.double-border{
+    margin: 15px;
+    border-top: green;
+    border-top-style: dotted;
+    border-bottom-width: 2px;
+    border-bottom: red;
+    border-bottom-style: dashed;
+    border-bottom-width: 5px;
+}
+.roundest-border{
+    background-color:red;
+    color:white;
+    border-radius:20px;
+    padding: 20px;
+    border-color: black;
+    border-style: solid;
+}
+.fully-rounded{
+    background-color: yellow;
+    color:black;
+    border-radius: 100%;
+    border-color:black;
+    border-style: solid;
+    padding: 20px;
+}
+.circle{
+    background-color: red;
+    color:white;
+    border-radius: 50%;
+    border-style: solid;
+    width: 80px;
+    height: 80px;
+    border-color: black;    
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+
+
+} 
+span{
+    color:green;
+    text-decoration-line: underline;
+}
+.text{
+    display: block;
+    color:green;
+    
+}
+.inline-div{
+    display:inline;
+    background-color: yellow;
+    color:black;
+    background-repeat: no-repeat;
+
+}
+.inline-block{
+    background-color: red;
+    width:40px;
+    height: 40px;
+    display:inline-block;
+    color:white;
+
+    
+
+}
+
+.text-center{
+    display: block;
+    text-align: center;
+}
+.text-right{
+    display: block;
+    text-align: right;
+}
+
+
+</style>
+
+<body>
+   <div class="red">My color is red(default red, using class)</div> 
+   <div class="red-too">My color is red too(default red using style on div)</div>
+   <div class="red-rgba">My color is rgba red</div>
+   <div class="hex-red">My color is hex red</div>
+   <div class="background-color">My background color is red</div>
+   <div class="background-yellow">I have padding same on each side</div>
+   <div class="double-border">I have margin 20px on rears and 10px on top and bottom </div>
+   <div class="roundest-border">I am a little rounded</div>
+   <div class="fully-rounded">I am a fully rounded</div>
+   <div class="circle">I am Circle</div>
+   <span>I am a tag which is inline by default</span>
+   <div class="inline-div">I am a div which is inline</div>
+   <span class = "text">I was a tag which inline but now I am block </span> 
+   <div class="inline-div">I am an inline div near an inline block div</div>
+   <div class="inline-block">Inline block</div>
+   <div class="text-left">Text left ( default )</div>
+   <div class="text-center">Text center</div>
+   <div class="text-right">Text text-right</div> 
+
+</body>
+</html>
